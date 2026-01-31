@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FF Market</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial;
+color:#fff;
+background:url('bg.jpg') no-repeat center center fixed;
+background-size:cover;
+}
+
+/* sections */
+.section{display:none;min-height:100vh}
+.section:target{display:block}
+#home{display:block}
+
+/* overlay */
+.overlay{
+min-height:100vh;
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(6px);
+padding:20px;
+}
+
+/* center */
+.center{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+min-height:100vh;
+}
+
+.title{
+font-size:30px;
+font-weight:bold;
+color:#f5a623;
+text-shadow:0 0 18px #f5a623;
+}
+
+.subtitle{margin:15px 0 25px}
+
+.btn{
+width:90%;
+max-width:320px;
+padding:16px;
+margin:10px 0;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+display:block;
+text-align:center;
+}
+
+.sell{background:#f5a623;color:#000}
+.buy{border:2px solid #f5a623;color:#f5a623}
+
+/* social */
+.social{
+margin:30px 0;
+display:flex;
+gap:25px;
+}
+.social a{color:#fff;font-size:26px}
+
+/* card */
+.card{
+background:#111;
+padding:18px;
+border-radius:15px;
+max-width:360px;
+margin:20px auto;
+text-align:center;
+box-shadow:0 0 15px rgba(245,166,35,.3);
+}
+.card img{
+width:100%;
+border-radius:12px;
+margin-bottom:10px;
+}
+.price{color:#f5a623;font-weight:bold}
+
+/* form */
+form{
+max-width:360px;
+margin:20px auto;
+background:#111;
+padding:20px;
+border-radius:15px;
+}
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+}
+
+.send{
+background:#f5a623;
+border:none;
+padding:14px;
+width:100%;
+border-radius:10px;
+font-weight:bold;
+font-size:17px;
+color:#000;
+}
+
+.back{
+display:block;
+text-align:center;
+margin-top:15px;
+color:#f5a623;
+text-decoration:none;
+}
+
+.note{
+font-size:13px;
+opacity:.75;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+<div id="home" class="section">
+<div class="overlay">
+<div class="center">
+
+<div class="title">
+AMISH ALAM DEALER<br>
+FREE FIRE MARKET
+</div>
+
+<div class="subtitle">Buy & Sell Trusted FF Accounts</div>
+
+<a href="#sell" class="btn sell">Sell Free Fire Account</a>
+<a href="#buy" class="btn buy">I Want to Buy Free Fire Account</a>
+
+<div class="social">
+<a href="https://chat.whatsapp.com/DlJHVEGKWcV7DixZtS8Qk3"><i class="fab fa-whatsapp"></i></a>
+<a href="https://youtube.com/@2b2_gaming?si=ddp-hzc0UTAa4o-9"><i class="fab fa-youtube"></i></a>
+<a href="https://vm.tiktok.com/ZS91xVXPjy7v3-bCbJO/"><i class="fab fa-tiktok"></i></a>
+</div>
+
+<p style="opacity:.7">© 2026 FF Market</p>
+<p style="opacity:.7">For more inquiry    what'sapp  316 1574191</p>
+
+
+</div>
+</div>
+</div>
+
+<!-- ================= BUY PAGE ================= -->
+<div id="buy" class="section">
+<div class="overlay">
+
+<h2 style="text-align:center">Buy Free Fire ID</h2>
+
+<div class="card">
+<img src="no1.jpg">
+<h3>Prime FF Account</h3>
+<p>Level 65 | Prime Yes | Rare Bundles</p>
+<p class="price">Price: 3000 PKR</p>
+
+<p><b>EasyPaisa Number:</b><br>03161574191</p>
+
+<form onsubmit="sendBuyEmail();return false;">
+<input type="file" required>
+<button class="send">Send Payment Proof on Email</button>
+</form>
+
+<p class="note">
+After clicking button, email will open.<br>
+Attach payment screenshot & send.
+</p>
+</div>
+
+<a href="#home" class="back">← Back to Home</a>
+
+</div>
+</div>
+
+<!-- ================= SELL PAGE ================= -->
+<div id="sell" class="section">
+<div class="overlay">
+
+<h2 style="text-align:center">Sell Your FF Account</h2>
+
+<form onsubmit="sendSellEmail();return false;">
+<input id="level" placeholder="Account Level" required>
+<input id="prime" placeholder="Prime (Yes / No)" required>
+<input id="bundles" placeholder="No. of Bundles" required>
+<input id="login" placeholder="Login Type (Google / FB)" required>
+<input id="price" placeholder="Expected Price (PKR)" required>
+
+<button class="send">Send Details on Email</button>
+</form>
+
+<a href="#home" class="back">← Back to Home</a>
+
+</div>
+</div>
+
+<script>
+const EMAIL = "amishffdealer@gmail.com";
+const EASYPAY = "03161574191";
+
+function sendBuyEmail(){
+let body =
+"Buy Free Fire ID%0A%0A" +
+"Price: 3000 PKR%0A" +
+"EasyPaisa Number: " + EASYPAY + "%0A%0A" +
+"Payment proof attached.";
+
+window.location.href =
+"mailto:"+EMAIL+
+"?subject=Buy FF ID"+
+"&body="+body;
+}
+
+function sendSellEmail(){
+let body =
+"Sell Free Fire ID%0A%0A"+
+"Account Level: "+level.value+"%0A"+
+"Prime: "+prime.value+"%0A"+
+"Bundles: "+bundles.value+"%0A"+
+"Login: "+login.value+"%0A"+
+"Expected Price: "+price.value;
+
+window.location.href =
+"mailto:"+EMAIL+
+"?subject=Sell FF ID"+
+"&body="+body;
+}
+</script>
+
+</body>
+</html>
